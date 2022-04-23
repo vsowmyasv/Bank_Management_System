@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class DBLoader {
     
-    static Connection connection;
+    public static Connection connection;
     public static Statement statement;
 
     public static void establishConnection()
