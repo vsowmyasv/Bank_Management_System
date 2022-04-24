@@ -1,7 +1,7 @@
 package DBController;
 
 import Model.UserDetails;
-// include DBConstants class for tables, columns
+
 public class DBQuery {
 
     UserDetails userDetails = new UserDetails();
