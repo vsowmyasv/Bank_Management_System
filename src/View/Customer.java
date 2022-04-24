@@ -12,11 +12,11 @@ public class Customer {
         //creating object for model class UserDetails
         UserDetails userDetails = new UserDetails();
         
-        System.out.println("Enter the user ID : ");
+        Util.print("Enter the user ID : ");
         String userID = Util.scanString(); //calling function to scan the input String from user
         userDetails.setUserID(userID.trim());
 
-        System.out.println("Enter password : ");
+        Util.print("Enter password : ");
         String userPassword = Util.scanString();
         userDetails.setUserPassword(userPassword.trim());
 
@@ -27,8 +27,10 @@ public class Customer {
         DBLoader.createStatements();
         ResultSet resultSet = DBLoader.statement.executeQuery(query);
         
+        //calling the function to check whether the input credentials are valid
         DBHandler.checkIfLoginExists(resultSet);
         
+        //calling the function to close the connection
         DBLoader.closeConnection();
     }
 }

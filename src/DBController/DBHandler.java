@@ -2,13 +2,16 @@ package DBController;
 
 import java.sql.*;
 
+import View.Util;
+
 public class DBHandler {
+    //function to check if the input credentials are valid
     public static void checkIfLoginExists(ResultSet resultSet)
     {
         int check = 0;
         try
         {
-            if(resultSet.next())
+            if(resultSet.next()) // checking if the query returns atleast 1 row
             {
                 check = 1;
             }
@@ -22,8 +25,8 @@ public class DBHandler {
             System.out.println(e);
         }
         if(check == 1)
-        System.out.println("Logged in successfully");
+        Util.print("Logged in successfully");
         else
-        System.out.println("Invalid Login");
+        Util.print("Invalid Login");
     }
 }

@@ -11,8 +11,5 @@ public class DBQuery {
         //return SQL query to perform the login operation
         String query = "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " = '" + userDetails.userID + "' AND " + DBConstants.userPassword + " = '" + userDetails.userPassword + "'";
         return query;
-
-        // String query = "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " LIKE '%" + userDetails.userID + "%' AND " + DBConstants.userPassword + "  LIKE '%" + userDetails.userPassword + "%'";
-
     }
 }

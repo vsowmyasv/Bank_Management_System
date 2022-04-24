@@ -3,7 +3,6 @@ package Model;
 public class UserDetails {
 
     //declaring attributes of the table
-    // public variables - no static 
     public String userID;
     public String userPassword;
 
@@ -11,7 +10,7 @@ public class UserDetails {
     public String getUserID() {
         return userID;
     }
-    public void setUserID(String userID) { // add only if neccessary
+    public void setUserID(String userID) {
         this.userID = userID;
     }
     public String getUserPassword() {

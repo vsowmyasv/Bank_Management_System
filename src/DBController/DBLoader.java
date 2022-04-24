@@ -1,5 +1,6 @@
 package DBController;
 import java.sql.*;
+import View.Util;
 
 public class DBLoader {
     
@@ -13,28 +14,29 @@ public class DBLoader {
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/BANK_MANAGEMENT_SYSTEM", "root", "mySQL313");
         }
         catch(SQLException e){
-            System.out.println("Error in connection establishment "+e);
+            Util.print("Error in connection establishment "+e);
         }
     }
     public static void createStatements()
     {
         try{
+        // creating statement object
         statement = connection.createStatement();
-
         }
         catch(SQLException e) 
         {
-            System.out.println("Error in creating the statement for execution "+e);
+            Util.print("Error in creating the statement for execution "+e);
         }
     }
     public static void closeConnection()
     {
         try{
+        // closing connection
         connection.close();
         }
         catch(SQLException e)
         {
-            System.out.println("Error in closing the connection "+e);;
+            Util.print("Error in closing the connection "+e);;
         }
     }
 }

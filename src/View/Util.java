@@ -19,4 +19,9 @@ public class Util {
         int integer = scanner.nextInt();
         return integer; // return directly
     }
+    public static void print(String string)
+    {
+        //printing the string
+        System.out.println(string);
+    }
 }
