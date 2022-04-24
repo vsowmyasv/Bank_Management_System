@@ -14,11 +14,11 @@ public class Customer {
         
         System.out.println("Enter the user ID : ");
         String userID = Util.scanString(); //calling function to scan the input String from user
-        userDetails.setUserID(userID);
+        userDetails.setUserID(userID.trim());
 
         System.out.println("Enter password : ");
         String userPassword = Util.scanString();
-        userDetails.setUserPassword(userPassword);
+        userDetails.setUserPassword(userPassword.trim());
 
         //fetching query
         String query = DBQuery.loginQuery(userDetails);
