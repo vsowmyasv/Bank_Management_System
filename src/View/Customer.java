@@ -26,8 +26,6 @@ public class Customer {
         //executing query
         DBLoader.createStatements();
         ResultSet resultSet = DBLoader.statement.executeQuery(query);
-
-        resultSet.next();
         
         DBHandler.checkIfLoginExists(resultSet);
         

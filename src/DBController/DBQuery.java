@@ -9,7 +9,7 @@ public class DBQuery {
     public static String loginQuery(UserDetails userDetails)
     {
         //return SQL query to perform the login operation
-        String str = "SELECT COUNT(*) AS LOGIN FROM USERDETAILS WHERE UserID = '" + userDetails.userID + "' AND UserPassword = '" + userDetails.userPassword + "'";
+        String str = "SELECT * FROM UserDetails WHERE '" + DBConstants.userID + "' LIKE %'" + userDetails.userID + "'% AND '" + DBConstants.userPassword + "'  LIKE %'" + userDetails.userPassword + "'%";
         return str;
     }
 }
