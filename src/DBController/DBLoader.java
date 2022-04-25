@@ -14,7 +14,7 @@ public class DBLoader {
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/BANK_MANAGEMENT_SYSTEM", "root", "mySQL313");
         }
         catch(SQLException e){
-            Util.print("Error in connection establishment "+e);
+            Util.printToConsole("Error in connection establishment "+e);
         }
     }
     public static void createStatements()
@@ -25,7 +25,7 @@ public class DBLoader {
         }
         catch(SQLException e) 
         {
-            Util.print("Error in creating the statement for execution "+e);
+            Util.printToConsole("Error in creating the statement for execution "+e);
         }
     }
     public static void closeConnection()
@@ -36,7 +36,7 @@ public class DBLoader {
         }
         catch(SQLException e)
         {
-            Util.print("Error in closing the connection "+e);;
+            Util.printToConsole("Error in closing the connection "+e);;
         }
     }
 }

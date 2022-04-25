@@ -17,7 +17,7 @@ public class Util {
         //returning input integer from the user
         return scanner.nextInt();
     }
-    public static void print(String string)
+    public static void printToConsole(String string)
     {
         //printing the string
         System.out.println(string);

@@ -9,10 +9,10 @@ public class Customer {
         //calling function to establish connection with DB
         DBLoader.establishConnection(); 
         
-        Util.print("Enter the user ID : ");
+        Util.printToConsole("Enter the user ID : ");
         String userID = Util.scanString(); //calling function to scan the input String from user
 
-        Util.print("Enter password : ");
+        Util.printToConsole("Enter password : ");
         String userPassword = Util.scanString();
 
         //creating object for model class UserDetails

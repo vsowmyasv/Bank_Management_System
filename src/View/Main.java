@@ -4,7 +4,7 @@ import java.sql.SQLException;
 public class Main {
    public static void main(String[] args) throws SQLException
    {
-    Util.print("Choose any of the following operation to perform : \n1. Login");
+    Util.printToConsole("Choose any of the following operation to perform : \n1. Login");
     int choice = Util.scanInt(); //calling function to scan input integer from user
 
         switch(choice)
@@ -13,7 +13,7 @@ public class Main {
                     customer.login(); //calling function to perform the login operation
                     break;
 
-            default: Util.print("Enter a valid option from the menu! ");
+            default: Util.printToConsole("Enter a valid option from the menu! ");
         }
 
     }

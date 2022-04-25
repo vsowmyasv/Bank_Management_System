@@ -25,8 +25,8 @@ public class DBHandler {
             System.out.println(e);
         }
         if(check == 1)
-        Util.print("Logged in successfully");
+        Util.printToConsole("Logged in successfully");
         else
-        Util.print("Invalid Login");
+        Util.printToConsole("Invalid Login");
     }
 }
