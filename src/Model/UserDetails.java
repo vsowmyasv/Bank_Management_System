@@ -6,16 +6,10 @@ public class UserDetails {
     public String userID;
     public String userPassword;
 
-    //declaring getter and setter methods
+    //contructor to initialize the attributes
     public UserDetails(String userID, String userPassword)
     {
         this.userID = userID;
         this.userPassword = userPassword;
-    }
-    public String getUserID() {
-        return userID;
-    }
-    public String getUserPassword() {
-        return userPassword;
     }
 }
