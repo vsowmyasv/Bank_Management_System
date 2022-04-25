@@ -10,14 +10,12 @@ public class Util {
     public static String scanString()
     {
         //returning input string from the user
-        String str = scanner.next();
-        return str;
+        return scanner.next();
     }
     public static int scanInt()
     {
-        //returning integer from the user
-        int integer = scanner.nextInt();
-        return integer; // return directly
+        //returning input integer from the user
+        return scanner.nextInt();
     }
     public static void print(String string)
     {
