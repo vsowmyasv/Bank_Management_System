@@ -8,17 +8,15 @@ public class Customer {
     {
         //calling function to establish connection with DB
         DBLoader.establishConnection(); 
-
-        //creating object for model class UserDetails
-        UserDetails userDetails = new UserDetails();
         
         Util.print("Enter the user ID : ");
         String userID = Util.scanString(); //calling function to scan the input String from user
-        userDetails.setUserID(userID.trim());
 
         Util.print("Enter password : ");
         String userPassword = Util.scanString();
-        userDetails.setUserPassword(userPassword.trim());
+
+        //creating object for model class UserDetails
+        UserDetails userDetails = new UserDetails(userID.trim(),userPassword.trim());
 
         //fetching query
         String query = DBQuery.loginQuery(userDetails);

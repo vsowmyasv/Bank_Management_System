@@ -4,7 +4,7 @@ import Model.UserDetails;
 
 public class DBQuery {
 
-    UserDetails userDetails = new UserDetails();
+    UserDetails userDetails = new UserDetails(null, null);
 
     public static String loginQuery(UserDetails userDetails)
     {
