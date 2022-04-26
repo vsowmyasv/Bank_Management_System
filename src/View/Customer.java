@@ -44,17 +44,18 @@ public class Customer {
             case 1: Util.printToConsole("Enter the amount to be deposited in your account : ");
                     int depositAmount = Util.scanInt();
 
-                    String query = DBQuery.depositAmountQuery(depositAmount, userDetails.userID);
                     DBLoader.createStatements();
-                    DBLoader.statement.executeUpdate(query);
+                    DBLoader.statement.executeUpdate(DBQuery.depositAmountQuery(depositAmount, userDetails.userID));
                     break;
 
-          /*  case 2: Util.printToConsole("Enter the amount to be withdrawn : ");
+            case 2: Util.printToConsole("Enter the amount to be withdrawn : ");
                     int withdrawAmount = Util.scanInt();
-                    DBQuery.withdrawAmountQuery(withdrawAmount);
+
+                    DBLoader.createStatements();
+                    DBLoader.statement.executeUpdate(DBQuery.withdrawAmountQuery(withdrawAmount, userDetails.userID));
                     break;
 
-            case 3: DBQuery.displayCurrentBalanceQuery();
+         /*   case 3: DBQuery.displayCurrentBalanceQuery();
                     break;
 
             case 4: DBQuery.updateAccount();

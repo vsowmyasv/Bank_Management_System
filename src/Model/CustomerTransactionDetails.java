@@ -4,6 +4,7 @@ public class CustomerTransactionDetails {
 
     String userID, transactionType, accountNumber, transactionDate;
     int transactionAmount;
+    
     public String getUserID() {
         return userID;
     }
