@@ -4,12 +4,17 @@ import Model.UserDetails;
 
 public class DBQuery {
 
-    UserDetails userDetails = new UserDetails(null, null);
+    UserDetails userDetails = new UserDetails();
 
     public static String loginQuery(UserDetails userDetails)
     {
         //return SQL query to perform the login operation
         String query = "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " = '" + userDetails.userID + "' AND " + DBConstants.userPassword + " = '" + userDetails.userPassword + "'";
+        return query;
+    }
+    public static String depositAmountQuery(int depositAmount, String UserID)
+    {
+        String query = "UPDATE " + DBConstants.customerTransactionDetails + " SET " + DBConstants.currentBalance + " = " + DBConstants.currentBalance + " + " + depositAmount + " WHERE " + DBConstants.userID + " = '" + UserID + "'";
         return query;
     }
 }
