@@ -22,4 +22,9 @@ public class Util {
         //printing the string
         System.out.println(string);
     }
+    public static void printIntToConsole(int integer)
+    {
+        //printing the integer
+        System.out.println(integer);
+    }
 }

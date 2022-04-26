@@ -55,11 +55,18 @@ public class Customer {
                     DBLoader.statement.executeUpdate(DBQuery.withdrawAmountQuery(withdrawAmount, userDetails.userID));
                     break;
 
-         /*   case 3: DBQuery.displayCurrentBalanceQuery();
+            case 3: DBLoader.createStatements();
+                    Util.printToConsole("Current Balance : ");
+                    ResultSet resultSet = DBLoader.statement.executeQuery(DBQuery.displayCurrentBalanceQuery(userDetails.userID));
+                    resultSet.next();
+                    Util.printIntToConsole(resultSet.getInt(1));
                     break;
 
-            case 4: DBQuery.updateAccount();
-                    break;*/
+            /*case 4: DBQuery.updateAccount();
+                    break;
+
+            case 5: DBQuery.displayAccount();
+                    break; */
 
             default: Util.printToConsole("Enter a valid option from the menu!");
         }

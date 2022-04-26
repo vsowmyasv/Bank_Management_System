@@ -24,4 +24,10 @@ public class DBQuery {
         String query = "UPDATE " + DBConstants.customerTransactionDetails + " SET " + DBConstants.currentBalance + " = " + DBConstants.currentBalance + " - " + withdrawAmount + " WHERE " + DBConstants.userID + " = '" + UserID + "'";
         return query;
     }
+
+    public static String displayCurrentBalanceQuery(String UserID)
+    {
+        String query = "SELECT " + DBConstants.currentBalance + " FROM " + DBConstants.customerTransactionDetails + " WHERE " + DBConstants.userID + " = '" + UserID + "'";
+        return query;
+    }
 }
