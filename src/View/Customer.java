@@ -59,6 +59,8 @@ public class Customer {
 
             case 4: DBQuery.updateAccount();
                     break;*/
+
+            default: Util.printToConsole("Enter a valid option from the menu!");
         }
     } 
 }
