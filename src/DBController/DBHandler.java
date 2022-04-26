@@ -6,6 +6,7 @@ import View.Customer;
 import View.Util;
 
 public class DBHandler {
+    
     static Customer customer = new Customer();
     //function to check if the input credentials are valid
     public static void checkIfLoginExists(ResultSet resultSet)
