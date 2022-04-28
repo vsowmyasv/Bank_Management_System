@@ -3,9 +3,9 @@ package DBController;
 public class DBConstants {
     // defining constants for DB tables
     final static String userTable = "UserDetails";
-    final static String userID = "UserID";                  //primary key
+    final static String userID = "UserID"; // primary key
     final static String userPassword = "UserPassword";
-    
+
     final static String customerPersonalDetails = "CustomerPersonalDetails";
     final static String customerName = "CustomerName";
     final static String customerAddress = "CustomerAddress";

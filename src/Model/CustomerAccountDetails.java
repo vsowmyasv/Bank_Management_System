@@ -36,5 +36,4 @@ public class CustomerAccountDetails {
         this.accountType = accountType;
     }
 
-       
 }
