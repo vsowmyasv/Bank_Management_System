@@ -50,9 +50,8 @@ public class CustomerUseCases {
                 break;
 
             default:
-                Util.printToConsole("Enter a valid option from the manu !!");
+                Util.printToConsole("Enter a valid option from the menu !!");
                 break;
         }
     }
-
 }

@@ -136,9 +136,10 @@ public class Customer {
                                         ResultSet resultSet2 = DBLoader.statement
                                                         .executeQuery(DBQuery.displayAccountDetails(userDetails));
                                         while (resultSet2.next())
-                                                Util.printToConsole(resultSet2.getString(1) + resultSet2.getString(2)
-                                                                + resultSet2.getString(3) + resultSet2.getString(4)
-                                                                + resultSet2.getString(5));
+                                                Util.printToConsole(resultSet2.getString(1) + " "
+                                                                + resultSet2.getString(2) + " " +
+                                                                resultSet2.getString(3) + " " + resultSet2.getString(4)
+                                                                + " " + resultSet2.getString(5));
                                 } catch (SQLException e) {
                                         Util.printToConsole("Couldn't fetch your details!");
                                 }
