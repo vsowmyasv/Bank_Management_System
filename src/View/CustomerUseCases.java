@@ -49,7 +49,7 @@ public class CustomerUseCases {
 
                 break;
 
-            default:
+            default: Util.printToConsole("Enter a valid option from the manu !!");
                 break;
         }
     }
