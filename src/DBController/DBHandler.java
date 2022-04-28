@@ -6,7 +6,7 @@ import View.Customer;
 import View.Util;
 
 public class DBHandler {
-    
+
     static Customer customer = new Customer();
     //function to check if the input credentials are valid
     public static void checkIfLoginExists(ResultSet resultSet)
@@ -15,7 +15,7 @@ public class DBHandler {
         {
             if(resultSet.next()) // checking if the query returns atleast 1 row
             {
-                Util.printToConsole("Logged in successfully");
+                Util.printToConsole("Logged in successfully\n");
                 Customer.customerUseCases();
             }
             else

@@ -1,5 +1,6 @@
 package DBController;
 
+import Model.CustomerTransactionDetails;
 import Model.UserDetails;
 
 public class DBQuery {
@@ -9,25 +10,23 @@ public class DBQuery {
     public static String loginQuery(UserDetails userDetails)
     {
         //return SQL query to perform the login operation
-        String query = "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " = '" + userDetails.userID + "' AND " + DBConstants.userPassword + " = '" + userDetails.userPassword + "'";
-        return query;
+        return "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " = '" + userDetails.getUserID() + "' AND " + DBConstants.userPassword + " = '" + userDetails.getUserPassword() + "'";
     }
 
-    public static String depositAmountQuery(int depositAmount, String UserID)
+    public static String TransactionUpdate(UserDetails userDetails, CustomerTransactionDetails customerTransactionDetails)
     {
-        String query = "UPDATE " + DBConstants.customerTransactionDetails + " SET " + DBConstants.currentBalance + " = " + DBConstants.currentBalance + " + " + depositAmount + " WHERE " + DBConstants.userID + " = '" + UserID + "'";
-        return query;
-    }
-    
-    public static String withdrawAmountQuery(int withdrawAmount, String UserID)
-    {
-        String query = "UPDATE " + DBConstants.customerTransactionDetails + " SET " + DBConstants.currentBalance + " = " + DBConstants.currentBalance + " - " + withdrawAmount + " WHERE " + DBConstants.userID + " = '" + UserID + "'";
-        return query;
+        String accNumber = "ASDBGD56463";
+        return "INSERT INTO " + DBConstants.customerTransactionDetails + " VALUES( '" + userDetails.getUserID() + "' , '" + accNumber + "' , " + customerTransactionDetails.getTransactionAmount() + " , '" + customerTransactionDetails.getTransactionType() + "' , '" + customerTransactionDetails.getTransactionDate() + "' , '" + customerTransactionDetails.getTransactionTime() + "' , " + customerTransactionDetails.getCurrentBalance() + " )" ;
     }
 
     public static String displayCurrentBalanceQuery(String UserID)
     {
-        String query = "SELECT " + DBConstants.currentBalance + " FROM " + DBConstants.customerTransactionDetails + " WHERE " + DBConstants.userID + " = '" + UserID + "'";
+        return "SELECT " + DBConstants.currentBalance + " FROM " + DBConstants.customerTransactionDetails + " WHERE " + DBConstants.userID + " = '" + UserID + "' ORDER BY " + DBConstants.transactionDate + " DESC ," + DBConstants.transactionTime + " DESC LIMIT 1 ";
+    }
+
+    public static String updatePersonalDetailsString(String UserID)
+    {
+        String query = "UPDATE " + DBConstants.customerBasicDetails + " SET " + DBConstants.customerName + " = '" "' ";
         return query;
     }
 }

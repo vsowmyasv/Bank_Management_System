@@ -20,6 +20,7 @@ public class DBConstants {
     final static String transactionAmount = "TransactionAmount";
     final static String transactionType = "TransactionType";
     final static String transactionDate = "TransactionDate";
+    final static String transactionTime = "TransactionTime";
     final static String currentBalance = "currentBalance";
 
 }

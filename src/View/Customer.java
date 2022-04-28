@@ -7,7 +7,7 @@ public class Customer {
     
     //creating object for model class UserDetails
     static UserDetails userDetails = new UserDetails();
-    
+    static CustomerTransactionDetails customerTransactionDetails = new CustomerTransactionDetails();
     void login() throws SQLException
     {
         //calling function to establish connection with DB
@@ -36,36 +36,66 @@ public class Customer {
     }
     public static void customerUseCases() throws SQLException
     {
-        Util.printToConsole("Choose from options below to perform the operation : \n1. Deposit\n2. Withdraw\n3. Display current balance\n4. Update account\n5. Display account");
+        Util.printToConsole("Choose from options below to perform the operation : \n1. Deposit\n2. Withdraw\n3. Display current balance\n4. Update account\n5. Display account  ");
         int choice = Util.scanInt();
+
+        CustomerUseCases customerUseCases = new CustomerUseCases();
 
         switch(choice)
         {
             case 1: Util.printToConsole("Enter the amount to be deposited in your account : ");
-                    int depositAmount = Util.scanInt();
+                    customerTransactionDetails.setTransactionAmount(Util.scanInt());
 
-                    DBLoader.createStatements();
-                    DBLoader.statement.executeUpdate(DBQuery.depositAmountQuery(depositAmount, userDetails.userID));
+                    ResultSet currentBalanceBeforeDeposit = DBLoader.statement.executeQuery(DBQuery.displayCurrentBalanceQuery(userDetails.getUserID()));
+
+                    currentBalanceBeforeDeposit.next();
+                    customerTransactionDetails.setCurrentBalance(currentBalanceBeforeDeposit.getInt(1) + customerTransactionDetails.getTransactionAmount());
+                    
+                    customerTransactionDetails.setTransactionType("Deposit");
+                    customerTransactionDetails.setTransactionDate(java.time.LocalDate.now());
+                    customerTransactionDetails.setTransactionTime(java.time.LocalTime.now());
+
+                    DBLoader.statement.executeUpdate(DBQuery.TransactionUpdate(userDetails, customerTransactionDetails));
+
+                    Util.printToConsole("Amount Deposited !!");
                     break;
 
             case 2: Util.printToConsole("Enter the amount to be withdrawn : ");
-                    int withdrawAmount = Util.scanInt();
+                    customerTransactionDetails.setTransactionAmount(Util.scanInt());
 
-                    DBLoader.createStatements();
-                    DBLoader.statement.executeUpdate(DBQuery.withdrawAmountQuery(withdrawAmount, userDetails.userID));
+                    ResultSet currentBalanceBeforeWithdraw = DBLoader.statement.executeQuery(DBQuery.displayCurrentBalanceQuery(userDetails.getUserID()));
+
+                    currentBalanceBeforeWithdraw.next();
+                    customerTransactionDetails.setCurrentBalance(currentBalanceBeforeWithdraw.getInt(1) - customerTransactionDetails.getTransactionAmount());
+                    
+                    customerTransactionDetails.setTransactionType("Withdraw");
+                    customerTransactionDetails.setTransactionDate(java.time.LocalDate.now());
+                    customerTransactionDetails.setTransactionTime(java.time.LocalTime.now());
+
+                    DBLoader.statement.executeUpdate(DBQuery.TransactionUpdate(userDetails, customerTransactionDetails));
+
+                    Util.printToConsole("Amount Withdrawn !!");
                     break;
 
             case 3: DBLoader.createStatements();
                     Util.printToConsole("Current Balance : ");
-                    ResultSet resultSet = DBLoader.statement.executeQuery(DBQuery.displayCurrentBalanceQuery(userDetails.userID));
+                    ResultSet resultSet = DBLoader.statement.executeQuery(DBQuery.displayCurrentBalanceQuery(userDetails.getUserID()));
                     resultSet.next();
                     Util.printIntToConsole(resultSet.getInt(1));
                     break;
 
-            /*case 4: DBQuery.updateAccount();
+            case 4: Util.printToConsole("Enter the field you want to update \n1. Name\n2. Address\n3. Contact number");
+                    int updateChoice = Util.scanInt();                    
+                    customerUseCases.customerUpdate(updateChoice, userDetails.getUserID());
+
+                    DBLoader.createStatements();
+                    
+            
+            
+                    // DBQuery.updateAccount();
                     break;
 
-            case 5: DBQuery.displayAccount();
+            /*case 5: DBQuery.displayAccount();
                     break; */
 
             default: Util.printToConsole("Enter a valid option from the menu!");

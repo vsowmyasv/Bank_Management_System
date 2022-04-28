@@ -3,8 +3,8 @@ package Model;
 public class UserDetails {
 
     //declaring attributes of the table
-    public String userID;
-    public String userPassword;
+    String userID;
+    String userPassword;
     
     public String getUserID() {
         return userID;

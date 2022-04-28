@@ -10,7 +10,7 @@ public class DBLoader {
     public static void establishConnection()
     {
         try {
-        //establishing connection using JDBC, try-catch
+        //establishing connection using JDBC
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/BANK_MANAGEMENT_SYSTEM", "root", "mySQL313");
         }
         catch(SQLException e){

@@ -20,11 +20,11 @@ public class Util {
     public static void printToConsole(String string)
     {
         //printing the string
-        System.out.println(string);
+        System.out.print(string);
     }
     public static void printIntToConsole(int integer)
     {
         //printing the integer
-        System.out.println(integer);
+        System.out.print(integer);
     }
 }

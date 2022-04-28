@@ -1,10 +1,14 @@
 package Model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class CustomerTransactionDetails {
 
-    String userID, transactionType, accountNumber, transactionDate;
-    int transactionAmount;
-    
+    String userID, transactionType, accountNumber;
+    LocalDate transactionDate;
+    LocalTime transactionTime;
+    int transactionAmount, currentBalance;
     public String getUserID() {
         return userID;
     }
@@ -23,11 +27,17 @@ public class CustomerTransactionDetails {
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
-    public String getTransactionDate() {
+    public LocalDate getTransactionDate() {
         return transactionDate;
     }
-    public void setTransactionDate(String transactionDate) {
+    public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
+    }
+    public LocalTime getTransactionTime() {
+        return transactionTime;
+    }
+    public void setTransactionTime(LocalTime transactionTime) {
+        this.transactionTime = transactionTime;
     }
     public int getTransactionAmount() {
         return transactionAmount;
@@ -35,6 +45,12 @@ public class CustomerTransactionDetails {
     public void setTransactionAmount(int transactionAmount) {
         this.transactionAmount = transactionAmount;
     }
-
+    public int getCurrentBalance() {
+        return currentBalance;
+    }
+    public void setCurrentBalance(int currentBalance) {
+        this.currentBalance = currentBalance;
+    }
+    
     
 }
