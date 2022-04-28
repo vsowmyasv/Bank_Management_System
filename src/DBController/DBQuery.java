@@ -35,4 +35,16 @@ public class DBQuery {
         String query = "UPDATE " + DBConstants.customerPersonalDetails + " SET " + DBConstants.customerAddress + " = '" + newAddress + "' WHERE " + DBConstants.userID + " = '" + userDetails.getUserID() + "' ";
         return query;
     }
+
+    public static String updatePersonalDetailsContactNumber(UserDetails userDetails, String newContactNumber)
+    {
+        String query = "UPDATE " + DBConstants.customerPersonalDetails + " SET " + DBConstants.customerContactNumber + " = " + newContactNumber + " WHERE " + DBConstants.userID + " = '" + userDetails.getUserID() + "' ";
+        return query;
+    }
+
+    public static String displayAccountDetails(UserDetails userDetails)
+    {
+        String query = "SELECT * FROM " + DBConstants.customerPersonalDetails + " WHERE " + DBConstants.userID + " = '" + userDetails.getUserID() + "' ";
+        return query;
+    }
 }

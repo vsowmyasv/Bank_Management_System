@@ -90,13 +90,12 @@ public class Customer {
 
                     DBLoader.createStatements();
                     
-            
-            
-                    // DBQuery.updateAccount();
                     break;
 
-            /*case 5: DBQuery.displayAccount();
-                    break; */
+            case 5: ResultSet resultSet2 = DBLoader.statement.executeQuery(DBQuery.displayAccountDetails(userDetails));
+                    while(resultSet2.next())
+                    Util.printToConsole(resultSet2.getString(1) + resultSet2.getString(2) + resultSet2.getString(3) + resultSet2.getString(4) + resultSet2.getString(5));
+                    break; 
 
             default: Util.printToConsole("Enter a valid option from the menu!");
         }

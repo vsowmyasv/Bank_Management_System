@@ -2,8 +2,7 @@ package Model;
 
 public class CustomerPersonalDetails {
 
-    String userID, customerName, customerAddress, accountNumber;
-    int customerContactNumber;
+    String userID, customerName, customerAddress, accountNumber, customerContactNumber;
     public String getUserID() {
         return userID;
     }
@@ -28,10 +27,10 @@ public class CustomerPersonalDetails {
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
-    public int getCustomerContactNumber() {
+    public String getCustomerContactNumber() {
         return customerContactNumber;
     }
-    public void setCustomerContactNumber(int customerContactNumber) {
+    public void setCustomerContactNumber(String customerContactNumber) {
         this.customerContactNumber = customerContactNumber;
     }
 

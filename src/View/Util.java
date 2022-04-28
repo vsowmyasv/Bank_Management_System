@@ -14,6 +14,7 @@ public class Util {
     }
     public static String scanStringLine()
     {
+        scanner.nextLine();
         return scanner.nextLine();
     }
     public static int scanInt()

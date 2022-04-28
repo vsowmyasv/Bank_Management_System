@@ -25,6 +25,13 @@ public class CustomerUseCases
 
                     break;
         
+            case 3: Util.printToConsole("Enter new contact number to update : ");
+                    customerPersonalDetails.setCustomerContactNumber(Util.scanString());
+
+                    DBLoader.statement.executeUpdate(DBQuery.updatePersonalDetailsContactNumber(userDetails, customerPersonalDetails.getCustomerContactNumber()));
+            
+                    break;
+
             default:
                 break;
         }
