@@ -24,9 +24,15 @@ public class DBQuery {
         return "SELECT " + DBConstants.currentBalance + " FROM " + DBConstants.customerTransactionDetails + " WHERE " + DBConstants.userID + " = '" + UserID + "' ORDER BY " + DBConstants.transactionDate + " DESC ," + DBConstants.transactionTime + " DESC LIMIT 1 ";
     }
 
-    public static String updatePersonalDetailsString(String UserID)
+    public static String updatePersonalDetailsName(UserDetails userDetails, String newName)
     {
-        String query = "UPDATE " + DBConstants.customerBasicDetails + " SET " + DBConstants.customerName + " = '" "' ";
+        String query = "UPDATE " + DBConstants.customerPersonalDetails + " SET " + DBConstants.customerName + " = '" + newName + "' WHERE " + DBConstants.userID + " = '" + userDetails.getUserID() + "' ";
+        return query;
+    }
+
+    public static String updatePersonalDetailsAddress(UserDetails userDetails, String newAddress)
+    {
+        String query = "UPDATE " + DBConstants.customerPersonalDetails + " SET " + DBConstants.customerAddress + " = '" + newAddress + "' WHERE " + DBConstants.userID + " = '" + userDetails.getUserID() + "' ";
         return query;
     }
 }

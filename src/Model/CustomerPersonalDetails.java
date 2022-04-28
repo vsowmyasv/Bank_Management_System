@@ -1,6 +1,6 @@
 package Model;
 
-public class CustomerBasicDetails {
+public class CustomerPersonalDetails {
 
     String userID, customerName, customerAddress, accountNumber;
     int customerContactNumber;

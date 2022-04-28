@@ -6,11 +6,11 @@ public class DBConstants {
     final static String userID = "UserID";                  //primary key
     final static String userPassword = "UserPassword";
     
-    final static String customerBasicDetails = "CustomerBasicDetails";
+    final static String customerPersonalDetails = "CustomerPersonalDetails";
     final static String customerName = "CustomerName";
     final static String customerAddress = "CustomerAddress";
     final static String customerContactNumber = "CustomerContactNumber";
-    final static String accountNumber = "AccountNumber";
+    final static String customerAccountNumber = "CustomerAccountNumber";
 
     final static String customerAccountDetails = "CustomerAccountDetails";
     final static String panNumber = "PanNumber";

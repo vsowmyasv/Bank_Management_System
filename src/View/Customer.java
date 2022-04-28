@@ -86,7 +86,7 @@ public class Customer {
 
             case 4: Util.printToConsole("Enter the field you want to update \n1. Name\n2. Address\n3. Contact number");
                     int updateChoice = Util.scanInt();                    
-                    customerUseCases.customerUpdate(updateChoice, userDetails.getUserID());
+                    customerUseCases.customerUpdate(updateChoice, userDetails);
 
                     DBLoader.createStatements();
                     

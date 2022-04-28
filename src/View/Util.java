@@ -12,6 +12,10 @@ public class Util {
         //returning input string from the user
         return scanner.next();
     }
+    public static String scanStringLine()
+    {
+        return scanner.nextLine();
+    }
     public static int scanInt()
     {
         //returning input integer from the user
@@ -20,11 +24,11 @@ public class Util {
     public static void printToConsole(String string)
     {
         //printing the string
-        System.out.print(string);
+        System.out.println(string);
     }
     public static void printIntToConsole(int integer)
     {
         //printing the integer
-        System.out.print(integer);
+        System.out.println(integer);
     }
 }
