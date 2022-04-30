@@ -92,7 +92,7 @@ public class Customer {
                                                         .getInt(1) - customerTransactionDetails.getTransactionAmount());
                                         Util.printToConsole("Amount Withdrawn !!");
                                 } catch (SQLException e) {
-                                        Util.printToConsole("Cannot withdraw !!");
+                                        Util.printToConsole("Cannot withdraw !! You do not have sifficient funds!!");
                                 }
                                 customerTransactionDetails.setTransactionType("Withdraw");
                                 customerTransactionDetails.setTransactionDate(java.time.LocalDate.now());
