@@ -83,11 +83,16 @@ public class Customer {
                                         ResultSet currentBalanceBeforeWithdraw = DBLoader.statement.executeQuery(
                                                         DBQuery.displayCurrentBalanceQuery(userDetails.getUserID()));
 
+                                        if(currentBalanceBeforeWithdraw.getInt(1) < customerTransactionDetails.getTransactionAmount())
+                                        {
+                                                Util.printToConsole("Cannot withdraw! You do not have sufficient amount to withdraw this amount!! ");
+                                        }
                                         currentBalanceBeforeWithdraw.next();
                                         customerTransactionDetails.setCurrentBalance(currentBalanceBeforeWithdraw
                                                         .getInt(1) - customerTransactionDetails.getTransactionAmount());
+                                        Util.printToConsole("Amount Withdrawn !!");
                                 } catch (SQLException e) {
-                                        Util.printToConsole("Couldn't execute query");
+                                        Util.printToConsole("Cannot withdraw !!");
                                 }
                                 customerTransactionDetails.setTransactionType("Withdraw");
                                 customerTransactionDetails.setTransactionDate(java.time.LocalDate.now());
@@ -100,7 +105,6 @@ public class Customer {
                                         Util.printToConsole("Couldn't update transaction");
                                 }
 
-                                Util.printToConsole("Amount Withdrawn !!");
                                 break;
 
                         case 3:

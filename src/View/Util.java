@@ -21,7 +21,7 @@ public class Util {
     }
 
     public static int scanInt() {
-        // returning input integer from the user
+        // returning input integer from user
         return scanner.nextInt();
     }
 

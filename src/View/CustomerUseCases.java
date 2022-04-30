@@ -18,7 +18,7 @@ public class CustomerUseCases {
                     DBLoader.statement.executeUpdate(
                             DBQuery.updatePersonalDetailsName(userDetails, customerPersonalDetails.getCustomerName()));
                 } catch (SQLException e) {
-                    Util.printToConsole("Couldn't update your new name!");
+                    Util.printToConsole("Couldn't update your new name!!");
                 }
 
                 break;
