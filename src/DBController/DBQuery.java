@@ -7,11 +7,19 @@ public class DBQuery {
 
     UserDetails userDetails = new UserDetails();
 
-    public static String loginQuery(UserDetails userDetails) {
+    public static String customerLoginQuery(UserDetails userDetails) {
         // return SQL query to perform the login operation
         return "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " = '"
                 + userDetails.getUserID() + "' AND " + DBConstants.userPassword + " = '" + userDetails.getUserPassword()
-                + "'";
+                + "' AND '" + userDetails.getUserID() + "' LIKE 'C%'" ;
+    }
+
+    public static String adminLoginQuery(UserDetails userDetails)
+    {
+        // return SQL query to perform the login operation
+        return "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " = '"
+                + userDetails.getUserID() + "' AND " + DBConstants.userPassword + " = '" + userDetails.getUserPassword()
+                + "' AND '" + userDetails.getUserID() + "' LIKE 'A%'" ;
     }
 
     public static String TransactionUpdate(UserDetails userDetails,

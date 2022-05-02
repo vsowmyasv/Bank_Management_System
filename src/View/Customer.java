@@ -23,7 +23,7 @@ public class Customer {
                 userDetails.setUserPassword(userPassword);
 
                 // fetching query
-                String query = DBQuery.loginQuery(userDetails);
+                String query = DBQuery.customerLoginQuery(userDetails);
 
                 // executing query
                 DBLoader.createStatements();
@@ -31,7 +31,7 @@ public class Customer {
                         ResultSet resultSet = DBLoader.statement.executeQuery(query);
 
                         // calling the function to check whether the input credentials are valid
-                        DBHandler.checkIfLoginExists(resultSet);
+                        DBHandler.checkIfLoginExistsCustomer(resultSet);
                 } catch (SQLException e) {
                         Util.printToConsole("Couldn't execute query : " + e);
                 }
