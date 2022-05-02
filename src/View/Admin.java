@@ -9,6 +9,7 @@ public class Admin {
 
     static UserDetails userDetails = new UserDetails();
     static CustomerAccountDetails customerAccountDetails = new CustomerAccountDetails();
+    static CustomerPersonalDetails customerPersonalDetails = new CustomerPersonalDetails();
 
     void login() {
         DBLoader.establishConnection();
@@ -44,25 +45,36 @@ public class Admin {
         int choice = Util.scanInt();
 
         switch (choice) {
-            case 1: Util.printToConsole("Enter user ID for the new customer : ");
-                    userDetails.setUserID(Util.scanString());
+            case 1:
+                Util.printToConsole("Enter user ID for the new customer : ");
+                userDetails.setUserID(Util.scanString());
 
-                    Util.printToConsole("Enter new password for the account : ");
-                    userDetails.setUserPassword(Util.scanString());
+                Util.printToConsole("Enter new password for the account : ");
+                userDetails.setUserPassword(Util.scanString());
 
-                    Util.printToConsole("Enter customer account number : ");
-                    customerAccountDetails.setAccountNumber(Util.scanString());
+                Util.printToConsole("Enter customer account number : ");
+                customerAccountDetails.setAccountNumber(Util.scanString());
 
-                    Util.printToConsole("Enter customer PAN number : ");
-                    customerAccountDetails.setPanNumber(Util.scanString());
+                Util.printToConsole("Enter customer PAN number : ");
+                customerAccountDetails.setPanNumber(Util.scanString());
 
-                    Util.printToConsole("Enter customer account type : ");
-                    customerAccountDetails.setAccountType(Util.scanString());
+                Util.printToConsole("Enter customer account type : ");
+                customerAccountDetails.setAccountType(Util.scanString());
 
+                Util.printToConsole("Enter customer name : ");
+                customerPersonalDetails.setCustomerName(Util.scanString());
+
+                Util.printToConsole("Enter customer address : ");
+                customerPersonalDetails.setCustomerAddress(Util.scanStringLine());
+
+                Util.printToConsole("Enter customer contact number : ");
+                customerPersonalDetails.setCustomerContactNumber(Util.scanString());
+
+                
                 break;
-        
+
             default:
-            Util.printToConsole("Enter a valid option from the menu !!");
+                Util.printToConsole("Enter a valid option from the menu !!");
                 break;
         }
     }
