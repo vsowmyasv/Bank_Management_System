@@ -18,6 +18,7 @@ public class Main {
 
             default:
                 Util.printToConsole("Enter a valid option from the menu! ");
+                break;
         }
 
     }

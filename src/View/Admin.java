@@ -8,6 +8,7 @@ import Model.*;
 public class Admin {
 
     static UserDetails userDetails = new UserDetails();
+    static CustomerAccountDetails customerAccountDetails = new CustomerAccountDetails();
 
     void login() {
         DBLoader.establishConnection();
@@ -50,9 +51,18 @@ public class Admin {
                     userDetails.setUserPassword(Util.scanString());
 
                     Util.printToConsole("Enter customer account number : ");
+                    customerAccountDetails.setAccountNumber(Util.scanString());
+
+                    Util.printToConsole("Enter customer PAN number : ");
+                    customerAccountDetails.setPanNumber(Util.scanString());
+
+                    Util.printToConsole("Enter customer account type : ");
+                    customerAccountDetails.setAccountType(Util.scanString());
+
                 break;
         
             default:
+            Util.printToConsole("Enter a valid option from the menu !!");
                 break;
         }
     }
