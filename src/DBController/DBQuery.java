@@ -11,15 +11,14 @@ public class DBQuery {
         // return SQL query to perform the login operation
         return "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " = '"
                 + userDetails.getUserID() + "' AND " + DBConstants.userPassword + " = '" + userDetails.getUserPassword()
-                + "' AND '" + userDetails.getUserID() + "' LIKE 'C%'" ;
+                + "' AND '" + userDetails.getUserID() + "' LIKE 'C%'";
     }
 
-    public static String adminLoginQuery(UserDetails userDetails)
-    {
+    public static String adminLoginQuery(UserDetails userDetails) {
         // return SQL query to perform the login operation
         return "SELECT * FROM " + DBConstants.userTable + " WHERE " + DBConstants.userID + " = '"
                 + userDetails.getUserID() + "' AND " + DBConstants.userPassword + " = '" + userDetails.getUserPassword()
-                + "' AND '" + userDetails.getUserID() + "' LIKE 'A%'" ;
+                + "' AND '" + userDetails.getUserID() + "' LIKE 'A%'";
     }
 
     public static String TransactionUpdate(UserDetails userDetails,
