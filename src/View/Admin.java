@@ -69,8 +69,13 @@ public class Admin {
 
                 Util.printToConsole("Enter customer contact number : ");
                 customerPersonalDetails.setCustomerContactNumber(Util.scanString());
-
-                
+                try {
+                    DBLoader.statement.executeUpdate(DBQuery.createAccountUserDetails(userDetails));
+                    DBLoader.statement.executeUpdate(DBQuery.createPersonalDetails(customerPersonalDetails));
+                    DBLoader.statement.executeUpdate(DBQuery.createAccountDetails(customerAccountDetails));
+                } catch (SQLException e) {
+                    Util.printToConsole("Couldn't create account");
+                }
                 break;
 
             default:

@@ -1,5 +1,7 @@
 package DBController;
 
+import Model.CustomerAccountDetails;
+import Model.CustomerPersonalDetails;
 import Model.CustomerTransactionDetails;
 import Model.UserDetails;
 
@@ -59,6 +61,28 @@ public class DBQuery {
     public static String displayAccountDetails(UserDetails userDetails) {
         String query = "SELECT * FROM " + DBConstants.customerPersonalDetails + " WHERE " + DBConstants.userID + " = '"
                 + userDetails.getUserID() + "' ";
+        return query;
+    }
+
+    public static String createAccountUserDetails(UserDetails userDetails) {
+        String query = "INSERT INTO " + DBConstants.userTable + "VALUES( '" + userDetails.getUserID() + "' , '"
+                + userDetails.getUserPassword() + "' , '" + userDetails.getAccountOpeningDate() + "' ) ";
+        return query;
+    }
+
+    public static String createAccountDetails(CustomerAccountDetails customerAccountDetails) {
+        String query = "INSERT INTO " + DBConstants.customerAccountDetails + "VALUES( '"
+                + customerAccountDetails.getUserID() + "' , '" + customerAccountDetails.getAccountNumber() + "' , '"
+                + customerAccountDetails.getPanNumber() + "' , '" + customerAccountDetails.getAccountType() + "' )";
+        return query;
+    }
+
+    public static String createPersonalDetails(CustomerPersonalDetails customerPersonalDetails) {
+        String query = "INSERT INTO " + DBConstants.customerPersonalDetails + " VALUES( '"
+                + customerPersonalDetails.getUserID() + "' , '" + customerPersonalDetails.getCustomerName() + "' , '"
+                + customerPersonalDetails.getCustomerAddress() + "' , '"
+                + customerPersonalDetails.getCustomerContactNumber() + "' , '"
+                + customerPersonalDetails.getAccountNumber() + "' )";
         return query;
     }
 }

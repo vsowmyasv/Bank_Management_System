@@ -5,6 +5,15 @@ public class UserDetails {
     // declaring attributes of the table
     String userID;
     String userPassword;
+    String accountOpeningDate;
+    
+    public String getAccountOpeningDate() {
+        return accountOpeningDate;
+    }
+
+    public void setAccountOpeningDate(String accountOpeningDate) {
+        this.accountOpeningDate = accountOpeningDate;
+    }
 
     public String getUserID() {
         return userID;
